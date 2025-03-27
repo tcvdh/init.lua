@@ -116,9 +116,9 @@ return {
             completion = {
                 completeopt = 'menu,menuone,noinsert',
             },
-            experimental = {
-                ghost_text = true, -- This shows the suggestion as virtual text
-            },
+            -- experimental = {
+            --     ghost_text = true, -- This shows the suggestion as virtual text
+            -- },
         })
 
         vim.diagnostic.config({
