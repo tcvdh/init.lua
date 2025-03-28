@@ -123,7 +123,7 @@ return {
 
             preselect = cmp.PreselectMode.Item,
             completion = {
-                completeopt = 'menu,menuone,noinsert',
+                completeopt = 'menu,menuone,noinsert, noselect',
             },
             -- experimental = {
             --     ghost_text = true, -- This shows the suggestion as virtual text
