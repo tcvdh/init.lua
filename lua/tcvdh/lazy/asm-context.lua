@@ -1,5 +1,5 @@
 return {
-    dir = '/users/tcvdh/Developer/asm-context.nvim', -- Path to your local plugin directory
+    'tcvdh/asm-context.nvim', -- Path to your local plugin directory
     requires = {
         'nvim-treesitter/nvim-treesitter',
     },
