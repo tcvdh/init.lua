@@ -26,3 +26,6 @@ end, { desc = "Format document" })
 
 -- start search and replace for word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set("v", "<C-f>", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], { desc = "Search forward for selected text" })
+vim.keymap.set("v", "#", [[y?\V<C-R>=escape(@",'/\')<CR><CR>]], { desc = "Search backward for selected text" })

@@ -49,7 +49,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "clangd",
-                "asm_lsp"
+                "asm_lsp",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -72,6 +72,13 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
+                end,
+                ["asm_lsp"] = function()
+                    require("lspconfig").asm_lsp.setup {
+                        capabilities = capabilities,
+                        filetypes = { "asm", "s", "S" },
+                        root_dir = require("lspconfig").util.root_pattern(".git"),
+                    }
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")

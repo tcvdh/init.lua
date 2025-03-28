@@ -10,6 +10,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- set assembly syntax
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.s", "*.S", "*.asm" },
+    callback = function()
+        vim.bo.filetype = "gas"
+    end
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
     callback = function(event)

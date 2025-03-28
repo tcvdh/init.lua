@@ -15,10 +15,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
--- Disable highlighting of search results after search is done
-vim.opt.hlsearch = false
--- Enable incremental search (showing matches as you type)
-vim.opt.incsearch = true
+-- -- Disable highlighting of search results after search is done
+-- vim.opt.hlsearch = false
+-- -- Enable incremental search (showing matches as you type)
+-- vim.opt.incsearch = true
 
 -- Enable true color support in terminal
 vim.opt.termguicolors = true
