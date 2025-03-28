@@ -51,6 +51,7 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "asm_lsp",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -135,10 +136,16 @@ return {
                 focusable = false,
                 style = "minimal",
                 border = "rounded",
-                source = "always",
                 header = "",
                 prefix = "",
             },
+            virtual_text = {
+                prefix = "●", -- Could be '■', '▎', 'x'
+                spacing = 4,
+            },
+            signs = true,
+            underline = true,
+            severity_sort = true,
         })
     end
 }
