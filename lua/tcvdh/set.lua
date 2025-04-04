@@ -65,6 +65,6 @@ vim.opt.inccommand = "split"
 -- Highlight the current line
 vim.opt.cursorline = true
 -- Keep cursor 8 lines from top/bottom of screen when scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 -- Prompt for confirmation instead of failing commands
 vim.opt.confirm = true
