@@ -15,6 +15,10 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- set newline at enf of file
+vim.opt.endofline = true
+vim.opt.fixendofline = true
+
 -- -- Disable highlighting of search results after search is done
 -- vim.opt.hlsearch = false
 -- -- Enable incremental search (showing matches as you type)
