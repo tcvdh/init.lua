@@ -52,7 +52,7 @@ return {
                 "clangd",
                 "asm_lsp",
                 "ts_ls",
---              "ltex",
+                "texlab",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
