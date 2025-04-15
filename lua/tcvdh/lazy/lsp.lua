@@ -52,6 +52,7 @@ return {
                 "clangd",
                 "asm_lsp",
                 "ts_ls",
+--              "ltex",
             },
             handlers = {
                 function(server_name) -- default handler (optional)

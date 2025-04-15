@@ -23,7 +23,8 @@ return {
             auto_install = true,
             highlight = {
                 enable = true,
-                additional_vim_regex_highlighting = { "ruby" },
+                disable = { "latex" },
+                additional_vim_regex_highlighting = { "ruby", "latex" },
             },
             indent = { enable = true, disable = { "ruby" } },
         },
