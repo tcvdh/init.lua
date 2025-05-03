@@ -2,6 +2,9 @@ require("tcvdh.set")
 require("tcvdh.remap")
 require("tcvdh.lazy_init")
 
+-- set background empty for transparency
+-- vim.cmd [[hi Normal ctermbg=NONE guibg=NONE]]
+
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
