@@ -29,7 +29,7 @@ return {
             },
             formatters = {
                 ["clang-format"] = {
-                    args = { "-style={IndentWidth: 4, UseTab: Never}" },
+                    args = { "-style={IndentWidth: 4, UseTab: Never, ColumnLimit: 100}" },
                 }
             }
         })

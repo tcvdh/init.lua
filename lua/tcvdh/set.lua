@@ -31,7 +31,7 @@ vim.opt.fixendofline = true
 vim.opt.termguicolors = true
 
 -- Display a vertical line at column 80 for code formatting guidance
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "100"
 
 -- Enable mouse support in all modes
 vim.opt.mouse = "a"
@@ -72,6 +72,6 @@ vim.opt.inccommand = "split"
 -- Highlight the current line
 vim.opt.cursorline = true
 -- Keep cursor 8 lines from top/bottom of screen when scrolling
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 12
 -- Prompt for confirmation instead of failing commands
 vim.opt.confirm = true
