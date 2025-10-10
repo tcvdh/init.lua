@@ -112,7 +112,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<M-k>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<M-j>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<Enter>'] = cmp.mapping.confirm({ select = true }),
+                ['<M-Enter>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({

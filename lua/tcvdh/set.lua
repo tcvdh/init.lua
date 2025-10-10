@@ -20,7 +20,7 @@ vim.opt.smartindent = true
 
 -- set newline at enf of file
 vim.opt.endofline = true
-vim.opt.fixendofline = true
+vim.opt.fixendofline = false
 
 -- -- Disable highlighting of search results after search is done
 -- vim.opt.hlsearch = false
