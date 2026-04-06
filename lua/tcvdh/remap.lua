@@ -32,3 +32,8 @@ vim.keymap.set("v", "#", [[y?\V<C-R>=escape(@",'/\')<CR><CR>]], { desc = "Search
 
 -- LSP code actions
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP Code Action' })
+
+-- Fuzzy picker for spelling check
+vim.keymap.set("n", "z=", function()
+  require("telescope.builtin").spell_suggest()
+end)

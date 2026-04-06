@@ -12,9 +12,9 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Set tab width to 4 spaces
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -44,7 +44,15 @@ vim.schedule(function()
 end)
 
 -- Disables line wrapping
-vim.opt.wrap = false
+-- vim.opt.wrap = false
+
+-- enable line wrapping and break lines at word boundaries
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.textwidth = 100
+
 -- Enable persistent undo history
 vim.opt.undofile = true
 -- Make searches case-insensitive by default
