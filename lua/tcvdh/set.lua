@@ -28,7 +28,6 @@ o.fixendofline = false
 o.wrap = true
 o.linebreak = true
 o.textwidth = 100
-o.spell = true
 o.spelllang = "en_us"
 
 o.ignorecase = true

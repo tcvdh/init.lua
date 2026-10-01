@@ -49,13 +49,7 @@ return {
             end,
             desc = "Search nvim config",
         },
-        {
-            "<leader>pv",
-            function()
-                Snacks.explorer()
-            end,
-            desc = "File explorer",
-        },
+        { "<leader>pv", "<cmd>Oil<cr>", desc = "File explorer (oil)" },
         {
             "<leader>gg",
             function()
