@@ -1,0 +1,4 @@
+# Fallback used by conform when a project has no .clang-format
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100

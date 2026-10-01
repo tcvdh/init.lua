@@ -1,85 +1,50 @@
--- Set space as the leader key for custom mappings
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- Disable swapfiles
-vim.opt.swapfile = false
-
--- Enable Nerd Font features
 vim.g.have_nerd_font = true
--- Show line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
 
--- Set tab width to 4 spaces
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+local o = vim.opt
 
--- set newline at enf of file
-vim.opt.endofline = true
-vim.opt.fixendofline = false
+o.number = true
+o.relativenumber = true
+o.cursorline = true
+o.scrolloff = 12
+o.signcolumn = "yes"
+o.colorcolumn = "100"
+o.termguicolors = true
+o.showmode = false -- lualine shows it
+o.list = true
+o.listchars = "tab:»·,trail:·,nbsp:·"
 
--- -- Disable highlighting of search results after search is done
--- vim.opt.hlsearch = false
--- -- Enable incremental search (showing matches as you type)
--- vim.opt.incsearch = true
+-- defaults only; vim-sleuth overrides per file/project (.editorconfig or detected from the file)
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
+o.autoindent = true
 
--- Enable true color support in terminal
-vim.opt.termguicolors = true
+o.endofline = true
+o.fixendofline = false
 
--- Display a vertical line at column 80 for code formatting guidance
-vim.opt.colorcolumn = "100"
+o.wrap = true
+o.linebreak = true
+o.textwidth = 100
+o.spell = true
+o.spelllang = "en_us"
 
--- Enable mouse support in all modes
-vim.opt.mouse = "a"
--- Hide the mode indicator (INSERT, VISUAL, etc) since status line shows it
-vim.opt.showmode = false
+o.ignorecase = true
+o.smartcase = true
+o.inccommand = "split"
 
--- Set clipboard to use system clipboard (scheduled to avoid startup issues)
+o.mouse = "a"
+o.swapfile = false
+o.undofile = true
+o.confirm = true
+o.updatetime = 250 -- idle ms before CursorHold fires and the swap file is written
+o.timeoutlen = 300
+
+o.splitright = true
+o.splitbelow = true
+
 vim.schedule(function()
-    vim.opt.clipboard = "unnamedplus"
+    o.clipboard = "unnamedplus" -- deferred: slows startup otherwise
 end)
-
--- Disables line wrapping
--- vim.opt.wrap = false
-
--- enable line wrapping and break lines at word boundaries
-vim.opt.wrap = true
-vim.opt.linebreak = true
-vim.opt.spell = true
-vim.opt.spelllang = "en_us"
-vim.opt.textwidth = 100
-
--- Enable persistent undo history
-vim.opt.undofile = true
--- Make searches case-insensitive by default
-vim.opt.ignorecase = true
--- Make searches case-sensitive when uppercase characters are used
-vim.opt.smartcase = true
--- Always show the sign column for git markers and diagnostics
-vim.opt.signcolumn = "yes"
--- Reduce time to trigger CursorHold event (for faster LSP hover) (250 before)
-vim.opt.updatetime = 50
--- Reduce delay for key combinations
-vim.opt.timeoutlen = 250
-
--- Open new vertical splits to the right
-vim.opt.splitright = true
--- Open new horizontal splits below
-vim.opt.splitbelow = true
--- Show invisible characters
-vim.opt.list = true
--- Set how invisible characters are displayed
-vim.opt.listchars = "tab:»·,trail:·,nbsp:·"
--- Preview substitutions as you type
-vim.opt.inccommand = "split"
-
--- Highlight the current line
-vim.opt.cursorline = true
--- Keep cursor 8 lines from top/bottom of screen when scrolling
-vim.opt.scrolloff = 12
--- Prompt for confirmation instead of failing commands
-vim.opt.confirm = true
