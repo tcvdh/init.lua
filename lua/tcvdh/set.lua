@@ -44,6 +44,18 @@ o.timeoutlen = 300
 o.splitright = true
 o.splitbelow = true
 
+-- Over SSH there is no Wayland/X clipboard, so copy with OSC 52: the local terminal (kitty) receives it and sets
+-- the clipboard on the desktop, where cliphist records it. Paste reads the unnamed register (terminals usually block OSC 52 reads).
+if vim.env.SSH_TTY then
+    local osc52 = require("vim.ui.clipboard.osc52")
+    local function paste() return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") } end
+    vim.g.clipboard = {
+        name = "OSC 52",
+        copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+        paste = { ["+"] = paste, ["*"] = paste },
+    }
+end
+
 vim.schedule(function()
     o.clipboard = "unnamedplus" -- deferred: slows startup otherwise
 end)
