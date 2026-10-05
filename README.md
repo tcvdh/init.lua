@@ -25,7 +25,7 @@ One manual step: run `:Copilot auth` to sign in to GitHub Copilot.
 | Compiling treesitter parsers | a C compiler (`gcc` or `clang`) |
 | Grep (`<leader>ps`) | `ripgrep` |
 | Icons | a [Nerd Font](https://www.nerdfonts.com/) set in your terminal |
-| Mason-installed Python tools (`black`) and npm tools (`prettier`, `ts_ls`) | `python`, `node` + `npm` |
+| Mason-installed Python tools (`basedpyright`) and npm tools (`prettier`, `tsgo`) | `python`, `node` + `npm` |
 | Lazygit (`<leader>gg`) | `lazygit` |
 | Clipboard on Linux | `wl-clipboard` (Wayland) or `xclip` (X11) |
 
@@ -40,10 +40,10 @@ Optional:
 
 ### Installed automatically by Mason
 
-Language servers (`lazy/lsp.lua`): `lua_ls`, `rust_analyzer`, `clangd`, `asm_lsp`, `ts_ls`,
+Language servers (`lazy/lsp.lua`): `lua_ls`, `rust_analyzer`, `clangd`, `asm_lsp`, `tsgo`,
 `texlab`, `basedpyright`, `ruff`. Zig (`zls`) is configured but only enabled if you install it.
 
-Tools: `tree-sitter-cli`, `stylua`, `prettier`, `black`, `clang-format`.
+Tools: `tree-sitter-cli`, `stylua`, `prettier`, `clang-format`.
 
 If something is missing, `:Mason` shows state and `:checkhealth` tells you what is wrong.
 
@@ -68,7 +68,7 @@ clang-format-default.yaml   C/C++ fallback style (see below)
 |---|---|
 | Core | lazy.nvim, plenary, nvim-web-devicons |
 | UI | catppuccin (macchiato), lualine, which-key, fidget, todo-comments, snacks (dashboard, notifier, indent guides) |
-| Navigation | snacks picker + explorer, oil.nvim, flash.nvim |
+| Navigation | snacks picker, oil.nvim, flash.nvim |
 | Git | gitsigns, lazygit (via snacks) |
 | LSP | nvim-lspconfig, mason, mason-lspconfig, mason-tool-installer, lazydev |
 | Completion | blink.cmp, friendly-snippets, copilot.lua (inline ghost text) |
@@ -90,7 +90,7 @@ Press `<Space>` and wait: which-key lists everything available.
 | `<leader>pw` | Grep word under cursor (or visual selection) |
 | `<leader><leader>` | Open buffers |
 | `<leader>sn` | Find files in this nvim config |
-| `<leader>pv` | Snacks explorer sidebar |
+| `<leader>pv` | Oil: open file explorer |
 | `-` | Oil: open parent directory as an editable buffer (rename by editing, `:w` to apply) |
 | `z=` | Spelling suggestions |
 | `<leader>gg` | Lazygit |
@@ -179,7 +179,7 @@ Markdown renders inside the buffer automatically; `:RenderMarkdown toggle` turns
 |---|---|
 | c, cpp | `clang-format`. A `.clang-format` in the project (searched upward) wins; otherwise `clang-format-default.yaml` (LLVM, 4 spaces, 100 columns) |
 | lua | stylua |
-| python | black |
+| python | ruff (`ruff_format`) |
 | js, ts, tsx, json, yaml | prettier |
 | rust | rustfmt |
 | tex | latexindent |
@@ -194,4 +194,4 @@ file contents. Treesitter only does highlighting; indenting uses Vim's built-in 
 
 - Treesitter is on the `main` branch because `master` breaks on Neovim 0.12.
 - `lazy-lock.json` pins plugin versions. Commit it after updating with `:Lazy update`.
-- Text width and color column are both 100; spell check is on.
+- Text width and color column are both 100; spell check is on for markdown, text, gitcommit, and tex.

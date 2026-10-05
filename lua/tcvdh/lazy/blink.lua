@@ -15,6 +15,7 @@ return {
             menu = { border = "rounded" },
             documentation = { auto_show = true, window = { border = "rounded" } },
         },
+        signature = { enabled = true, window = { border = "rounded" } },
         sources = { default = { "lsp", "path", "snippets", "buffer" } },
     },
 }

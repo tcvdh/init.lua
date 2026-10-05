@@ -54,7 +54,7 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "asm_lsp",
-                "ts_ls",
+                "tsgo",
                 "texlab",
                 "basedpyright",
                 "ruff",
@@ -63,7 +63,7 @@ return {
         })
 
         require("mason-tool-installer").setup({
-            ensure_installed = { "tree-sitter-cli", "stylua", "prettier", "black", "clang-format" },
+            ensure_installed = { "tree-sitter-cli", "stylua", "prettier", "clang-format" },
         })
 
         vim.diagnostic.config({
